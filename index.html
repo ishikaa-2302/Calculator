@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!--<div class="container">
+      <div class="calculator-box">
+        <form name="calculator">
+          <input id="display" type="text" name="display" placeholder="0" readonly>
+          <br>
+          <input type="button" class="button" value="1" onclick="calculator.display.value+='1'">
+          <input type="button" class="button" value="2" onclick="calculator.display.value+='2'">
+          <input type="button" class="button" value="3" onclick="calculator.display.value+='3'">
+          <input type="button" class="button math-button" value="+" onclick="calculator.display.value+='+'">
+          <br>
+          <input type="button" class="button" value="4" onclick="calculator.display.value+='4'">
+          <input type="button" class="button" value="5" onclick="calculator.display.value+='5'">
+          <input type="button" class="button" value="6" onclick="calculator.display.value+='6'">
+          <input type="button" class="button math-button" value="-" onclick="calculator.display.value+='-'">
+          <br>
+          <input type="button" class="button" value="7" onclick="calculator.display.value+='7'">
+          <input type="button" class="button" value="8" onclick="calculator.display.value+='8'">
+          <input type="button" class="button" value="9" onclick="calculator.display.value+='9'">
+          <input type="button" class="button math-button" value="X" onclick="calculator.display.value+='*'">
+          <br>
+          <input type="button" class="button clear-button" value="C" onclick="calculator.display.value =''">
+          <input type="button" class="button" value="0" onclick="calculator.display.value+='0'">
+          <input type="button" class="button math-button" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+          <input type="button" class="button math-button" value="/" onclick="calculator.display.value+='/'">
+          <br>
+        </form>
+      </div>
+    </div>-->
+
+    <div class="container">
+      <h1>Calculator</h1>
+      <div class="calculator-box">
+        <form class="calculator" name="calculator">
+          <input id="display" type="text" name="text1" placeholder="0" readonly>
+          <span class="button" onclick="document.calculator.text1.value +='1';">1</span>
+          <span class="button" onclick="document.calculator.text1.value +='2';">2</span>
+          <span class="button" onclick="document.calculator.text1.value +='3';">3</span>
+          <span class="button" onclick="document.calculator.text1.value += '*';">X</span>
+          <br>
+          <span class="button" onclick="document.calculator.text1.value +='4';">4</span>
+          <span class="button" onclick="document.calculator.text1.value +='5';">5</span>
+          <span class="button" onclick="document.calculator.text1.value +='6';">6</span>
+          <span class="button math-button" onclick="document.calculator.text1.value += '+';">+</span>
+          <br>
+          <span class="button" onclick="document.calculator.text1.value +='7';">7</span>
+          <span class="button" onclick="document.calculator.text1.value +='8';">8</span>
+          <span class="button" onclick="document.calculator.text1.value +='9';">9</span>
+          <span class="button math-button" onclick="document.calculator.text1.value += '-';">-</span>
+          <br>
+          <span class="button clear-button" onclick="document.calculator.text1.value = '';">C</span>
+          <span class="button" onclick="document.calculator.text1.value +='0';">0</span>
+          <span class="button math-button" onclick="document.calculator.text1.value = calculation(document.calculator.text1.value);">=</span>
+          <span class="button math-button" onclick="document.calculator.text1.value += '/';">/</span>
+        </form>
+      </div>
+    </div>
+
+    <center><div class="container" id="history">
+      <h1>History</h1>
+    </div></center>
+
+      <script type="text/javascript">
+        let history = document.getElementById('history');
+
+        function calculation(v){
+          para = document.createElement('p');
+          data = v + " = " + eval(v);
+          para.innerText = data;
+          history.appendChild(para);
+          return eval(v);
+        }
+      </script>
+  </body>
+</html>
